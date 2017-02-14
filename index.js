@@ -13,6 +13,10 @@ let dk = function (item) {
   switch (typeof item) {
     case 'object':
       if (item.keyCode) {
+        if (item.key) {
+          return item.key;
+        }
+
         keyCode = item.keyCode;
       }
       break;
@@ -31,7 +35,7 @@ let dk = function (item) {
 
   function getKey (keyCode) {
     if (library.hasOwnProperty(String(keyCode))) {
-      return library[String(keycode)];
+      return library[String(keyCode)];
     }
     else {
       return String.fromCharCode(keyCode);
