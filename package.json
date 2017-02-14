@@ -1,6 +1,6 @@
 {
   "name": "delightful-keycodes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package for converting ascii code to characters and vice versa.",
   "main": "index.js",
   "scripts": {
