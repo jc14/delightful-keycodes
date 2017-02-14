@@ -9,28 +9,37 @@ let key = dk(99);
 delightful-keycodes can take multiple types of values and automatically convert the keyCode to the correct character.
 
 ### Example
+
+##### Plain Ascii keyCode
 ``` javascript
 let keyCode = 99;
 
 dk(keyCode) // => 'c'
+```
 
+##### Browser key press events
+``` javascript
 let keyPressEvent = {
   keyCode = 99
 }
 
 dk(keyPressEvent) // => 'c'
+```
 
+##### Events with key property
+``` javascript
 let keyPressEvent2 = {
   key: 'f',
   keyCode = 99
 }
 
 dk(keyPressEvent2) // => 'f'
-// Chrome automatically converts the keyCode for you and provides it in the key property.
-// This is showing that delightful-keycodes won't convert the keyCode if a key is already provided.
-// This feature exists only because Safari doesn't convert the keyCode for you so you can throw the event into delightful-keycodes
-// regardless of the browser and it's smart enough to decide whether it needs to convert or not.
 ```
+
+Chrome automatically converts the keyCode for you and provides it in the key property. This is showing that delightful-keycodes won't convert the keyCode if a key is already provided.
+
+This feature exists only because Safari doesn't convert the keyCode for you so you can throw the event into delightful-keycodes
+regardless of the browser and it's smart enough to decide whether it needs to convert or not.
 
 ### Planned Features
 * Ability to take a character as an argument and automatically convert it to the proper keyCode.
