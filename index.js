@@ -12,12 +12,12 @@ let dk = function (item) {
 
   switch (typeof item) {
     case 'object':
-      if (item.keyCode) {
+      if (item.keyCode || item.charCode) {
         if (item.key) {
           return item.key;
         }
 
-        keyCode = item.keyCode;
+        keyCode = item.keyCode || item.charCode;
       }
       break;
     case 'number':
